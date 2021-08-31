@@ -27,8 +27,7 @@ const reducers = persistCombineReducers(config, rootReducers);
 const enhancers = [applyMiddleware(...middleware)];
 const persistConfig: any = { enhancers };
 const store = createStore(reducers, undefined, compose(...enhancers));
-const persistor = persistStore(store, persistConfig, () => {
-});
+const persistor = persistStore(store, persistConfig, () => {});
 const configureStore = () => {
   return { persistor, store };
 };
